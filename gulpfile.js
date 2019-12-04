@@ -14,6 +14,7 @@ var gulp = require('gulp'), // Подключаем Gulp
     cache = require('gulp-cache'), // Подключаем библиотеку кеширования
     autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов
     smartgrid = require('smart-grid');
+    gcmq = require('gulp-group-css-media-queries'); // Подключаем библиотеку для автоматического объединения media запросов
 
 var jsFiles = [
         './node_modules/jquery/dist/jquery.js',
@@ -76,7 +77,13 @@ smartgrid('./src/sass', settings);
 
 function sasstocss(){
     return gulp.src(sassFiles)
-	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+    .pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+    .pipe(gcmq()) // объединяем media запросы
+    /* чистим рабочий css файл и выводим его в человекочитаемом формате. Для того, чтобы увеличить отступы пришлось лезть в \node_modules\clean-css\lib\options\format.js и менять там indentBy на значение 4 (по-умолчанию у алиаса beautify это значение равно 2). Возможно есть другие способы изменить это значение в настройках ниже, но я не нашел */
+    .pipe(cleanCSS({
+        level: 2,
+        format: 'beautify'
+    }))
 	.pipe(gulp.dest('./src/css'));
 }
 
