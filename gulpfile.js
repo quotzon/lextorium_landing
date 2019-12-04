@@ -84,7 +84,7 @@ function styles(){
     return gulp.src(cssFiles)
     .pipe(concat('styles.min.css'))
     .pipe(autoprefixer({
-        browsers: ['last 15 versions'],
+        overrideBrowserslist: ['last 15 versions'],
         cascade: false
     }))
     .pipe(cleanCSS({
