@@ -4,7 +4,7 @@ var gulp = require('gulp'), // Подключаем Gulp
     sass = require('gulp-sass'), //Подключаем Sass пакет
     browserSync = require('browser-sync'), // Подключаем Browser Sync
     concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-    uglify = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
+    uglify = require('gulp-terser'), // Подключаем gulp-terser (для сжатия JS)
     cleanCSS = require('gulp-clean-css'), // Подключаем пакет для минификации CSS
     rename = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     notify = require("gulp-notify"), // Подключаем библиотеку для уведомлений об ошибках
@@ -44,7 +44,7 @@ var settings = {
     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
         maxWidth: '1200px', /* max-width оn very large screen */
-        fields: '30px' /* side fields */
+        fields: '0' /* side fields */
     },
     breakPoints: {
         lg: {
@@ -136,7 +136,10 @@ function watch(){
         server: {
             baseDir: "./src"
         },
-        tunnel: true
+        online: true // Этот параметр надо ставить в true. Поставил временно, т.к. были проблемы с tunnel
+        // tunnel: true,
+        // tunnel: 'quotzon'
+        
     });
     gulp.watch('./src/sass/**/*.scss', gulp.series(sasstocss,styles));
     gulp.watch(['./src/js/**/*.js', '!./src/js/scripts.min.js'], scripts);
