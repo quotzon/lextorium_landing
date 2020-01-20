@@ -1,0 +1,44 @@
+/**
+* Задаем цвет текста по цвету фона
+* source: http://thesassway.com/intermediate/dynamically-change-text-color-based-on-its-background-with-sass
+* @param {String} $background - background color - format accepted: hsla, rgb, #
+* @return {String} #color
+*/
+@function set-text-color($background) {
+    @if (lightness($background) > 50) {
+        @return $black; // Если фон светлый, возвращаем темный цвет
+    } @else {
+        @return $white; // Если фон темный, возвращаем светлый цвет
+    }
+}
+     
+    /*** Button mixins ***/
+     
+    /**
+    * Generate button style
+    * @param {String} - $name - required
+    * @param {String} - $background - required - format accepted: hsla, rgb, #
+    * @param {Strong} - $color - optionnal - format accepted: hsla, rgb, #
+    * If no $color specify, the 'set-text-color' function is called
+    * go check the _function.scss
+    */
+     
+@mixin genButton ($name, $buttonBgc, $color: '') {
+    &_#{$name} {
+        background-color: $buttonBgc;
+        @if ($color == '') {
+            color: set-text-color($buttonBgc);
+        } @else {
+            color: $color;
+        }
+        border: 2px solid $buttonBgc;
+        transition: background-color .3s linear;
+        transition: color .3s linear;
+
+        &:hover {
+            background-color: transparent;
+            border: 2px solid $buttonBgc;
+            color: $buttonBgc;
+        }
+    }
+}

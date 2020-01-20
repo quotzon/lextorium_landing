@@ -1,5 +1,59 @@
-@import 'smart-grid';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&subset=cyrillic');
+@import 'helpers/smart-grid';
+@import 'helpers/settings';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/functions';
+@import 'helpers/fonts';
+@import 'elements/buttons';
+@import 'elements/navbar';
+@import 'elements/headerBanner';
+@import 'elements/speakers';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i,900,900i&display=swap&subset=cyrillic,cyrillic-ext');
 
+@include reset();
 
+html {
+    font-size: $font_base;
+    color: $text-color;
+    font-family: $roboto;
+}
 
+.fullWrapper {
+    @include wrapper-full();
+}
+
+.wrapper {
+    @include wrapper();
+}
+
+.row {
+    @include row-flex();
+}
+
+// Стили блоков
+.section {
+    padding: 60px 0;
+    
+    &__content {
+        @include col();
+        @include size(12);
+    }
+
+    &__text {
+
+        &_big {
+            font-size: 20px;
+            line-height: 26px;
+            margin-bottom: 20px;
+
+            @include sm(font-size,20px);
+            @include sm(line-height,26px);
+            @include xs(font-size,16px);
+            @include xs(line-height,22px);
+        }
+    }
+
+    &_gray {
+        background-color: $light_gray;
+    }
+}

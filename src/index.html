@@ -3,13 +3,118 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Главная | Smart-grid test</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Шаблон посадочной страницы Lextorium</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Подключаем файл стилей -->
     <link rel="stylesheet" href="css/styles.min.css">
+    <!-- Подключаем шрифты FontAwesome -->
+    <script src="https://kit.fontawesome.com/962c53a630.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
+    <header class="header">
+        <div class="navbar">
+            <div class="navbar__wrapper wrapper">
+                <!-- <div class="row navbar__row"> -->
+                    <a class="navbar__logo mainLogo" href="https://lextorium.com" target="_blank">
+                        <img class="mainLogo__image" src="img/logo.png" alt="Lextorium - школа для юристов-практиков">
+                        <p class="mainLogo__desc">школа для юристов-практиков</p>
+                    </a>
+                    <nav class="navbar__menu menu">
+                        <input type="checkbox" id="menu__chkbox" class="menu__chkbox">
+                        <label for="menu__chkbox">
+                            <span class="menu__toggle">
+                                <span></span>
+                            </span>
+                            <ul class="menu__list touch">
+                                <li class="menu__item"><a href="#">Анонс</a></li>
+                                <li class="menu__item"><a href="#">Спикеры</a></li>
+                                <li class="menu__item"><a href="#">Программа</a></li>
+                                <li class="menu__item"><a href="#">Место проведения</a></li>
+                                <li class="menu__item"><a href="#">Отзывы</a></li>
+                                <li class="menu__item_button-blue"><a href="#">Стать слушателем</a></li>
+                            </ul>
+                        </label>    
+                    </nav>
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="headerBanner fullWrapper">
+            <div class="headerBanner__bgc ibg">
+                <img src="img/banners/big-top-image.jpg" alt="">
+            </div>
+            <div class="headerBanner__wrapper wrapper">
+                <h2 class="headerBanner__subCaption">Большой курс по банкротству</h2>
+                <h1 class="headerBanner__caption">Субсидиарная ответственность при банкротстве: разбор актуальной практики - 2020</h1>
+                <div class="headerBanner__description">
+                    <ul class="fa-ul">
+                        <li><span class="fa-li"><i class="fas fa-play-circle"></i></span>72 академических часа</li>
+                        <li><span class="fa-li"><i class="fas fa-briefcase"></i></span>Формат участия: онлайн</li>
+                        <li><span class="fa-li"><i class="fas fa-calendar"></i></span>28 января - 31 марта 2020 года</li>
+                        <li><span class="fa-li"><i class="fas fa-clock"></i></span>По вторникам с 10 до 12 МСК</li>
+                        <li><span class="fa-li"><i class="fas fa-award"></i></span>Удостоверение о повышении квалификации</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn btn_white">
+                    Узнать больше
+                </a>
+            </div>
+        </div>
+        <section class="section section_gray full-wrapper">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="section__content">
+                        <h2 class="sectionTitle">
+                            О чем пойдет речь
+                        </h2>
+                        <p class="section__text section__text_big">Последние годы институт субсидиарной ответственности при банкротстве все чаще применяется на практике и становится действенным инструментом привлечения к ответственности лиц, нарушавших права кредиторов. С ростом количества споров растет и количество вопросов, возникающих при применении этого института. Какие-то из них связаны с недостатками законодательства, какие-то упираются в трудности правоприменительной практики. На них реагирует как законодатель, так и судебная практика (в т.ч. Судебная коллегия по экономическим спорам Верховного Суда РФ).</p>
+                        <p class="section__text section__text_big">На семинаре с участием двух ведущих специалистов России по банкротству планируется обсудить, какие из уже найденных решений являются эффективными, а какие представляют угрозу для разумно рискующих бизнесменов и потому должны быть ограничительно истолкованы судебной практикой и в перспективе - пересмотрены.</p>
+                    </div>
+                </div>                
+            </div>
+        </section>
+        <section class="section full-wrapper">
+            <div class="wrapper">
+                <div class="row">
+                    <div class="section__content">
+                        <h2 class="sectionTitle">Спикеры</h2>
+                        <div class="speakers">
+                            <div class="speakers__item">
+                                <div class="speakers__img">
+                                    <img src="img/speakers/egorov.jpg" alt="Андрей Владимирович Егоров">
+                                </div>
+                                <div class="speakers__info">
+                                    <h3 class="speakers__name">Андрей Владимирович Егоров</h3>
+                                    <p class="speakers__desc">кандидат юридических наук, руководитель образовательных программ Lextorium.com, член Совета при Президенте Российской Федерации по кодификации и совершенствованию гражданского законодательства, действительный государственный советник юстиции 2 класса, гл. редактор Журнала РШЧП</p>
+                                </div>
+                            </div>
+        
+                            <div class="speakers__item">
+                                <div class="speakers__img">
+                                    <img src="img/speakers/egorov.jpg" alt="Андрей Владимирович Егоров">
+                                </div>
+                                <div class="speakers__info">
+                                    <h3 class="speakers__name">Андрей Владимирович Егоров</h3>
+                                    <p class="speakers__desc">кандидат юридических наук, руководитель образовательных программ Lextorium.com, член Совета при Президенте Российской Федерации по кодификации и совершенствованию гражданского законодательства, действительный государственный советник юстиции 2 класса, гл. редактор Журнала РШЧП</p>
+                                </div>
+                            </div>
+        
+                            <div class="speakers__item">
+                                <div class="speakers__img">
+                                    <img src="img/speakers/egorov.jpg" alt="Андрей Владимирович Егоров">
+                                </div>
+                                <div class="speakers__info">
+                                    <h3 class="speakers__name">Андрей Владимирович Егоров</h3>
+                                    <p class="speakers__desc">кандидат юридических наук, руководитель образовательных программ Lextorium.com, член Совета при Президенте Российской Федерации по кодификации и совершенствованию гражданского законодательства, действительный государственный советник юстиции 2 класса, гл. редактор Журнала РШЧП</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
     <script src="js/scripts.min.js"></script>
 </body>
 

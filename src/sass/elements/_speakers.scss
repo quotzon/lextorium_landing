@@ -1,0 +1,64 @@
+.speakers {
+    display: flex;
+    justify-content: center;
+
+    &__item {
+
+        margin: 15px 10px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.17);
+        transition: all 0.3s ease-in-out 0s;
+        overflow: hidden;
+        background-color: $lightnes_gray;
+        max-width: 350px;
+
+        @include md(max-width,250px);
+        @include xs(max-width,350px);
+
+        
+
+        &:hover {
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.35);
+        }
+    }
+
+    &__img {
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__info {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    &__name {
+        color: $black;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-top: 20px;
+        padding: 15px;
+        margin-bottom: 20px;
+        position: relative;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+
+        &::after {
+            content: "";
+            color: $black;
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            width: 48px;
+            left: 50%;
+            margin-left: -36px;
+        }
+    }
+
+    &__desc {
+        line-height: 22px;
+    }
+}

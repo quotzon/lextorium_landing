@@ -44,7 +44,7 @@ var settings = {
     mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
         maxWidth: '1200px', /* max-width оn very large screen */
-        fields: '0' /* side fields */
+        fields: '15px' /* side fields */
     },
     breakPoints: {
         lg: {
@@ -55,11 +55,11 @@ var settings = {
         },
         sm: {
             width: '780px',
-            fields: '15px' /* set fields only if you want to change container.fields */
+            // fields: '15px' /* set fields only if you want to change container.fields */
         },
         xs: {
             width: '560px',
-            fields: '15px'
+            // fields: '15px'
         }
         /* 
         We can create any quantity of break points.
@@ -73,7 +73,7 @@ var settings = {
     }
 };
 
-smartgrid('./src/sass', settings);
+smartgrid('./src/sass/helpers', settings);
 
 function sasstocss(){
     return gulp.src(sassFiles)

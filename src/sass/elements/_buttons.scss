@@ -1,0 +1,14 @@
+.btn {
+    font-size: 18px;
+    padding: 25px 70px;
+    border-radius: 4px;
+    text-decoration: none;
+    line-height: 0;
+    display: inline-block;
+    font-weight: 700;
+    margin-top: 50px;
+    cursor: pointer;
+    text-shadow: 1px 0px 0 rgba(0, 0, 0, 0.2);
+
+    @include genButton(white, $white, $blue);
+}

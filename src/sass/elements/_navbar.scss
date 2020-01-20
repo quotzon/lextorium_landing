@@ -1,0 +1,198 @@
+.navbar {
+    @include wrapper-full();
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    z-index: 100;
+    background-color: #fff;
+    background-position: center center;
+    
+
+    &__wrapper {
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: $navbarHeight;
+    }
+
+    &__menu {
+        .menu {
+
+            &__list {
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                list-style-type: none;
+                min-height: $navbarHeight;
+                
+                @include md(position,absolute);
+                @include md(left,0);
+                @include md(top,$navbarHeight);
+                @include md(flex-direction,column);
+                @include md(justify-content,space-around);
+                @include md(align-items,center);
+                @include md(height,0);
+                @include md(transition,height .3s linear);
+            }
+
+            &__item {
+                @include menuItem();
+
+                a {
+                   
+                   transition: color .2s linear;
+                   color: $black;
+
+                   &:hover {
+                       color: $blue;
+                   }
+                }
+
+                &_button-blue {
+                    @include menuItem();
+                    a {
+                        
+                        background-color: $blue;
+                        border-radius: 7px;
+                        color: $white;
+                    }
+                }
+            }
+
+            &__chkbox {
+                display: none;
+            }
+
+
+
+            &__toggle {
+                display: none;
+                position: relative;
+                background-color: #fff;
+            
+                @include md(clear,both);
+                @include md(align-self,center);
+                @include md(display,block);
+                @include md(text-align,center);
+                @include md(height,40px);
+                @include md(width,50px);
+                @include md(background,$blue);
+                @include md(border-radius,7px);
+                @include md(transition,all .1s linear);
+
+                span {
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -1px;
+                    left: 50%;
+                    margin-left: -15px;
+                    height: 3px;
+                    width: 30px;
+                    background-color: $white;
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -1px;
+                        left: 50%;
+                        margin-left: -15px;
+                        height: 3px;
+                        width: 30px;
+                        background-color: $white;
+                        content: '';
+                        display: block;
+                        transition: .4s;
+                    }
+
+                    &::before {
+                        transform: translateY(-8px);
+                    }
+
+                    &::after {
+                        transform: translateY(8px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mainLogo {
+    display: block;
+    max-width: 290px;
+    text-decoration: none;
+    font-weight: 700;
+    color: $text-color;
+    cursor: pointer;
+
+    @include lg(max-width,200px);
+
+    &__image {
+        width: 100%; 
+    }
+
+    &__desc {
+        text-align: center;
+        @include lg(font-size,12px);
+    }
+}
+
+#menu__chkbox {
+
+    &:checked {
+
+        & + label {
+            .menu {
+                &__list {
+                    @include md(display,flex);
+                    @include md(height,400px);
+                    @include md(width,100%);
+                    @include md(margin,20px 0);
+                    @include md(box-shadow,0px 0 6px 0 rgba(0, 0, 0, 0.06));
+                    @include md(background-color,$white);
+
+
+                    li.menu {
+                        &__item, &__item_button-blue {
+                            @include md(opacity,1);
+                            @include md(visibility,visible);
+                            @include md(transition,all .7s linear);
+                            
+
+                            a {
+                                @include md(font-size,20px);
+                            }
+                        }
+                        &__item_button-blue {
+                            @include md(margin-bottom,20px);
+                        }
+                        
+                    }
+                }
+
+                
+
+                &__toggle {
+
+                    span {
+                        height: 0;
+        
+                        &::before {
+                            transform: rotate(45deg);
+                        }
+        
+                        &::after {
+                            transform: rotate(-45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
